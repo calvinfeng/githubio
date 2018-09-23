@@ -9,6 +9,7 @@ body {
 
 pre {
     border: 1px solid #ccc;
+    padding: 0.5rem;
 }
 
 blockquote {
@@ -32,12 +33,15 @@ table tr:nth-child(2n) {
     background: #f6f8fa;
 }
 
+img {
+    max-width: 800px;
+}
+
 .index {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 100%;
 
     .app-bar {
         width: 100%;
@@ -47,11 +51,36 @@ table tr:nth-child(2n) {
         }
     }
 
+    .introduction {
+        width: 100%;
+        max-width: 1024px;
+        height: 300px;
+        display: inherit;
+        flex-direction: row;
+        margin-top: 0.5rem;
+
+        .left-container {
+            width: 30%;
+            min-width: 300px;
+            display: inherit;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+            
+        }
+
+        .right-container {
+            width: 70%;
+            display: inherit;
+            flex-direction: row;
+        }
+    }
+
     .content {
         width: 100%;
-        height: 100%;
         max-width: 1024px;
-        height: 1000px;
+        display: inherit;
+        flex-direction: column;
     }
 }
 

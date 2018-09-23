@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { AppBar, Typography, Toolbar, Menu, MenuItem, IconButton, withStyles } from '@material-ui/core'
+import { AppBar, Typography, Toolbar, Menu, MenuItem, IconButton, Paper } from '@material-ui/core'
 import { MenuRounded } from '@material-ui/icons'
 import GitHub from "./icons/github"
 import Post from "./components/post"
@@ -51,10 +51,33 @@ class Index extends React.Component<IndexProps, IndexState> {
     )
   }
 
+  get introduction() {
+    return (
+      <Paper className="introduction" elevation={1}>
+        <div className="left-container">
+          <img src="/imgs/my_face.jpeg" width="300px"/>
+        </div>
+        <div className="right-container">
+          <p>
+            I am a Software Engineer at Fetch Robotics. From day to day, I am dealing with the 
+            following technologies.
+          </p>
+          <div className="icons">        
+          </div>
+        </div>
+      </Paper>
+    )
+  }
+
   get content() {
+    const URLs: string[] = ["posts/lorem_ipsum.md"]
+    const posts = URLs.map((url) => {
+      return <Post markdownURL={url} />
+    })
+
     return (
       <section className="content">
-        <Post />
+        {posts}
       </section>
     )
   }
@@ -71,6 +94,7 @@ class Index extends React.Component<IndexProps, IndexState> {
     return (
       <section className="index">
         {this.appbar}
+        {this.introduction}
         {this.content}
       </section>
     )
