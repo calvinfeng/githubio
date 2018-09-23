@@ -16,7 +16,7 @@ class Post extends React.Component<any, PostState> {
     }
 
     componentDidMount() {
-        axios.get("markdowns/post_1.md").then((res) => {
+        axios.get("posts/post_1.md").then((res) => {
             this.setState({ markdownTxt: res.data });
         })
     }
