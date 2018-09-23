@@ -1,7 +1,7 @@
 module.exports = {
     mode: "development",
     devtool: "inline-source-map",
-    entry: "./index.tsx",
+    entry: "./src/index.tsx",
     output: {
         path: __dirname,
         filename: "index.js"
