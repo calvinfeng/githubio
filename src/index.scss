@@ -54,25 +54,27 @@ img {
     .introduction {
         width: 100%;
         max-width: 1024px;
-        height: 300px;
+        height: 576px;
         display: inherit;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
         margin-top: 0.5rem;
 
-        .left-container {
-            width: 30%;
-            min-width: 300px;
-            display: inherit;
-            flex-direction: row;
-            justify-content: center;
-            align-content: center;
-            
+        .background-video {
+            display: relative;
+            width: 100%;
+            top: 0;
+            left: 0;
         }
 
-        .right-container {
-            width: 70%;
-            display: inherit;
-            flex-direction: row;
+        .foreground-text {
+            display: relative;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
         }
     }
 
