@@ -60,21 +60,69 @@ img {
         justify-content: center;
         align-content: center;
         margin-top: 0.5rem;
+        position: relative;
 
         .background-video {
-            display: relative;
+            position: absolute;
             width: 100%;
             top: 0;
             left: 0;
         }
 
         .foreground-text {
-            display: relative;
             width: 100%;
             height: 100%;
+            display: inherit;
+            flex-direction: column;
+            position: absolute;
             top: 0;
             left: 0;
             z-index: 10;
+            color: white;
+            align-items: center;
+            justify-content: center;            
+
+            h1 {
+                font-size: 5rem;
+                margin: 0;
+            }
+        }
+    }
+
+    .project-overview {
+        width: 100%;
+        max-width: 1024px;
+        display: flex;
+        flex-direction: column;
+        
+        .title-1 {
+            margin-left: 0.5rem;
+        }
+
+        .logos {
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+
+            img {
+                max-height: 50px;
+                margin-left: 0.1rem;
+                margin-right: 0.1rem;
+            }
+        }
+
+        .project-grid {
+            width: 100%;
+            max-width: 1024px;
+            flex-grow: 1;
+            margin-top: 0.5rem;
+    
+            .grid-row {
+                margin: 0.5rem;
+            }
         }
     }
 

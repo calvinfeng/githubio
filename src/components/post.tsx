@@ -12,9 +12,9 @@ interface PostProps {
 }
 
 import "./post.scss"
-class Post extends React.Component<any, PostState> {
+class Post extends React.Component<PostProps, PostState> {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             markdownTxt: ""
