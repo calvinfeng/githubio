@@ -27,7 +27,7 @@ class ProjectCard extends React.Component<any, any> {
       <Card className="project-card">
         <CardActionArea>
           <CardMedia 
-            image="/imgs/mofasa.png"
+            image="/static/images/mofasa.png"
             title="My Face" className="project-image" />
           <CardContent>
             <Typography gutterBottom variant="headline" component="h2">{this.state.title}</Typography>
