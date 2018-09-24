@@ -110,10 +110,11 @@ class Index extends React.Component<IndexProps, IndexState> {
           onMouseLeave={this.handleSnackBarClose}>
           <img alt="Golang" src="/static/logos/golang.png" />
           <img alt="Python" src="/static/logos/python.png" />
-          <img alt="JavaScript" src="/static/logos/javascript.png" />
           <img alt="React" src="/static/logos/react.png" />
-          <img alt="Ruby" src="/static/logos/ruby.png" />
+          <img alt="JavaScript" src="/static/logos/javascript.png" />
           <img alt="Rails" src="/static/logos/rails.png" />
+          <img alt="Ruby" src="/static/logos/ruby.png" />
+          <img alt="Node" src="/static/logos/node.png" />
           <img alt="TypeScript" src="/static/logos/typescript.png" />
           <img alt="Apache Kafka" src="/static/logos/kafka.png" />
           <img alt="PostgreSQL" src="/static/logos/postgresql.png" />
@@ -164,7 +165,7 @@ class Index extends React.Component<IndexProps, IndexState> {
         <Snackbar
           onClose={this.handleSnackBarClose}
           open={this.state.isSnackBarOpen} 
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }} 
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }} 
           message={<span>{this.state.snackBarMessage}</span>} />
       </section>
     )
