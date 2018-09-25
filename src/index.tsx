@@ -94,6 +94,15 @@ class Index extends React.Component<IndexProps, IndexState> {
   }
 
   get projectOverview() {
+    const config = require('./configs/projects.json')
+    const cards = config.projects.map((project) => {
+      return (
+        <Grid key={project.id} item>
+          <ProjectCard title={project.title} description={project.description} image={project.image} />
+        </Grid>
+      )
+    })
+
     return (
       <Paper className="project-overview" elevation={1}>
         <Grid container 
@@ -101,9 +110,7 @@ class Index extends React.Component<IndexProps, IndexState> {
           direction="column" 
           onMouseEnter={this.newSnackBarOpenHandler("Things I built")}
           onMouseLeave={this.handleSnackBarClose}>
-          <Grid container className="grid-row" direction="row" spacing={16} justify="center" >
-            {[0, 1, 2, 3, 4, 5].map(value => <Grid key={value} item><ProjectCard /></Grid>)}
-          </Grid>
+          <Grid container className="grid-row" direction="row" spacing={16} justify="center" >{cards}</Grid>
         </Grid>
         <section className="logos"
           onMouseEnter={this.newSnackBarOpenHandler("Tools I use")}

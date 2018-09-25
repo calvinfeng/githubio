@@ -8,18 +8,21 @@ import {
   CardContent, 
   Typography 
 } from '@material-ui/core'
-
 import './project_card.scss'
 
-class ProjectCard extends React.Component<any, any> {
+interface ProjectCardState {
+  markdownTxt: string
+}
+
+interface ProjectCardProps {
+  title: string
+  description: string
+  image: string
+}
+
+class ProjectCard extends React.Component<ProjectCardProps, any> {
   constructor(props) {
     super(props)
-
-    this.state = {
-      title: "Mofasa",
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique enim vitae libero placerat, 
-      nec tempor arcu tristique.`
-    }
   }
 
   render() {
@@ -27,11 +30,16 @@ class ProjectCard extends React.Component<any, any> {
       <Card className="project-card">
         <CardActionArea>
           <CardMedia 
-            image="/static/images/mofasa.png"
-            title="My Face" className="project-image" />
+            className="project-image"
+            image={this.props.image}
+            title={this.props.title}  />
           <CardContent>
-            <Typography gutterBottom variant="headline" component="h2">{this.state.title}</Typography>
-            <Typography component="p">{this.state.description}</Typography>
+            <Typography gutterBottom variant="headline" component="h2">
+              {this.props.title}
+            </Typography>
+            <Typography component="p">
+              {this.props.description}
+            </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
