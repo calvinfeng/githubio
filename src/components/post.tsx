@@ -3,11 +3,10 @@ import * as ReactMarkdown from 'react-markdown'
 import { Paper } from '@material-ui/core'
 import axios from 'axios';
 
-interface PostState {
+type PostState = {
   markdownTxt: string
 }
-
-interface PostProps {
+type PostProps = {
   markdownURL: string
 }
 

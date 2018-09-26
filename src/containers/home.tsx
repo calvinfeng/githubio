@@ -4,16 +4,16 @@ import ProjectCard from '../components/project_card'
 import {
   Menu, MenuItem, IconButton, Paper, Grid, Snackbar
 } from '@material-ui/core'
-import './landing.scss'
+import './home.scss'
 
-interface LandingProps {}
+interface HomeProps {}
 
-interface LandingState {
+interface HomeState {
     snackBarOpen: boolean
     snackBarMessage: string
 }
 
-class Landing extends React.Component<LandingProps, LandingState> {
+class Home extends React.Component<HomeProps, HomeState> {
   constructor(props) {
     super(props)
 
@@ -56,7 +56,12 @@ class Landing extends React.Component<LandingProps, LandingState> {
     const cards = config.projects.map((project) => {
       return (
         <Grid key={project.id} item>
-          <ProjectCard title={project.title} description={project.description} image={project.image} />
+          <ProjectCard 
+            title={project.title}
+            description={project.description}
+            image={project.image} 
+            github={project.github}
+            live={project.live} />
         </Grid>
       )
     })
@@ -94,7 +99,7 @@ class Landing extends React.Component<LandingProps, LandingState> {
 
   render() {
     return (
-      <section className="landing">
+      <section className="home">
         {this.introduction}
         {this.gallery}
         <Snackbar
@@ -107,4 +112,4 @@ class Landing extends React.Component<LandingProps, LandingState> {
   }
 }
 
-export default Landing
+export default Home

@@ -1,16 +1,16 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import GitHub from "./components/github"
-import Landing from './containers/landing'
+import Home from './containers/home'
 import "./index.scss"
 import { MenuRounded } from '@material-ui/icons'
 import { AppBar, Typography, Toolbar, Menu, MenuItem, IconButton } from '@material-ui/core'
 
 type IndexProps = {}
 type IndexState = {
-    anchorElement: HTMLElement,
-    menuOpen: boolean,
-    page: string
+  anchorElement: HTMLElement,
+  menuOpen: boolean,
+  page: string
 }
 
 enum Page {
@@ -37,7 +37,7 @@ class Index extends React.Component<IndexProps, IndexState> {
   handleMenuClick = (e: React.MouseEvent<HTMLElement>) => {
     this.setState({ anchorElement: e.currentTarget, menuOpen: true })
   }
-  
+
   newSelectPageHandler = (page: string) => (e: React.MouseEvent<HTMLElement>) => {
     this.setState({ anchorElement: null, menuOpen: false, page })
   }
@@ -87,13 +87,13 @@ class Index extends React.Component<IndexProps, IndexState> {
   get body() {
     switch(this.state.page) {
       case Page.Home:
-        return <Landing />
+        return <Home />
       case Page.AboutMe:
         return <h1>About me</h1>
       case Page.Vlog:
         return <h1>Vlog</h1>
       default:
-        return <Landing />
+        return <Home />
     }
   }
 
