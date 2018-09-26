@@ -1,21 +1,22 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import GitHub from "./components/github"
-import Post from "./components/post"
 import Landing from './containers/landing'
 import "./index.scss"
-
-// Material UI
 import { MenuRounded } from '@material-ui/icons'
-import { 
-  AppBar, Typography, Toolbar, Menu, MenuItem, IconButton, 
-} from '@material-ui/core'
+import { AppBar, Typography, Toolbar, Menu, MenuItem, IconButton } from '@material-ui/core'
 
-interface IndexProps {}
-
-interface IndexState {
+type IndexProps = {}
+type IndexState = {
     anchorElement: HTMLElement,
     menuOpen: boolean,
+    page: string
+}
+
+enum Page {
+  Home = "HOME",
+  AboutMe = "ABOUT_ME",
+  Vlog = "VLOG"
 }
 
 class Index extends React.Component<IndexProps, IndexState> {
@@ -25,10 +26,30 @@ class Index extends React.Component<IndexProps, IndexState> {
     this.state = {
       anchorElement: undefined,
       menuOpen: false,
+      page: Page.Home
     }
   }
 
-  get appbar() {
+  handleMenuClose = (e: React.MouseEvent<HTMLElement>) => {
+    this.setState({ anchorElement: null, menuOpen: false })
+  }
+
+  handleMenuClick = (e: React.MouseEvent<HTMLElement>) => {
+    this.setState({ anchorElement: e.currentTarget, menuOpen: true })
+  }
+  
+  newSelectPageHandler = (page: string) => (e: React.MouseEvent<HTMLElement>) => {
+    this.setState({ anchorElement: null, menuOpen: false, page })
+  }
+  
+  newOpenLinkHandler = (url: string) => () => {
+    window.open(url)
+  }
+
+  get header() {
+    const github: string = "https://github.com/calvinfeng/"
+    const linkedin: string = "https://github.com/calvinfeng/"
+
     return (
       <AppBar position="static" color="default" className="app-bar">
         <Toolbar>
@@ -41,16 +62,21 @@ class Index extends React.Component<IndexProps, IndexState> {
             getContentAnchorEl={null}
             anchorEl={this.state.anchorElement}
             anchorOrigin={{"vertical": "bottom", "horizontal": "center"}} >
-            <MenuItem onClick={this.handleMenuClose}>Vlog</MenuItem>
-            <MenuItem onClick={this.handleMenuClose}>About Me</MenuItem>
+            <MenuItem onClick={this.newSelectPageHandler(Page.Home)} disabled={this.state.page == Page.Home}>
+              Home
+            </MenuItem>
+            <MenuItem onClick={this.newSelectPageHandler(Page.Vlog)} disabled={this.state.page == Page.Vlog}>
+              Vlog
+            </MenuItem>
+            <MenuItem onClick={this.newSelectPageHandler(Page.AboutMe)} disabled={this.state.page == Page.AboutMe}>
+              About Me
+            </MenuItem>
           </Menu>
-          <Typography variant="title" color="inherit" className="title">
-            Calvin Feng
-          </Typography>
-          <IconButton color="inherit" aria-label="Menu">
+          <Typography variant="title" color="inherit" className="title">Calvin Feng</Typography>
+          <IconButton color="inherit" aria-label="Menu" onClick={this.newOpenLinkHandler(github)}>
             <GitHub />
           </IconButton>
-          <IconButton color="inherit" aria-label="Menu">
+          <IconButton color="inherit" aria-label="Menu" onClick={this.newOpenLinkHandler(linkedin)}>
             <img height="30px" src="/static/logos/linkedin.svg" />
           </IconButton>
         </Toolbar>
@@ -58,32 +84,24 @@ class Index extends React.Component<IndexProps, IndexState> {
     )
   }
 
-  get content() {
-    const URLs: string[] = ["/static/markdowns/lorem_ipsum.md"]
-    const posts = URLs.map((url) => {
-      return <Post markdownURL={url} />
-    })
-
-    return (
-      <section className="content">
-        {posts}
-      </section>
-    )
-  }
-    
-  handleMenuClose = (e: React.MouseEvent<HTMLElement>) => {
-    this.setState({ anchorElement: null, menuOpen: false })
-  }
-
-  handleMenuClick = (e: React.MouseEvent<HTMLElement>) => {
-    this.setState({ anchorElement: e.currentTarget, menuOpen: true })
+  get body() {
+    switch(this.state.page) {
+      case Page.Home:
+        return <Landing />
+      case Page.AboutMe:
+        return <h1>About me</h1>
+      case Page.Vlog:
+        return <h1>Vlog</h1>
+      default:
+        return <Landing />
+    }
   }
 
   render() {
     return (
       <section className="index">
-        {this.appbar}
-        <Landing />
+        {this.header}
+        {this.body}
       </section>
     )
   }
