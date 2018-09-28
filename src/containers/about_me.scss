@@ -1,0 +1,44 @@
+.about-me {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1024px;
+
+  .activity-grid {
+    width: 100%;
+    max-width: 1024px;
+    flex-grow: 1;
+    
+    .grid-row {
+      .card {
+        .media {
+          height: 400px;
+          width: 500px;
+        }
+      }
+    }
+  }
+
+  // .header {
+  //   width: 100%;
+  //   max-width: 1024px;
+  //   display: inherit;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-content: center;
+  //   position: relative;
+  //   height: 768px;
+
+  //   .background-image {
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     img {
+  //       max-width: 1024px;
+  //       height: auto;
+  //       width: auto;
+  //     }
+  //   }
+  // }
+}

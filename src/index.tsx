@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import GitHub from "./components/github"
 import Home from './containers/home'
+import AboutMe from './containers/about_me'
 import "./index.scss"
 import { MenuRounded } from '@material-ui/icons'
 import { AppBar, Typography, Toolbar, Menu, MenuItem, IconButton } from '@material-ui/core'
@@ -89,7 +90,7 @@ class Index extends React.Component<IndexProps, IndexState> {
       case Page.Home:
         return <Home />
       case Page.AboutMe:
-        return <h1>About me</h1>
+        return <AboutMe />
       case Page.Vlog:
         return <h1>Vlog</h1>
       default:
