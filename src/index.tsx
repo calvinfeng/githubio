@@ -27,7 +27,7 @@ class Index extends React.Component<IndexProps, IndexState> {
     this.state = {
       anchorElement: undefined,
       menuOpen: false,
-      page: Page.Home
+      page: Page.AboutMe
     }
   }
 

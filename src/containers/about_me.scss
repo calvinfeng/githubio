@@ -5,40 +5,61 @@
   width: 100%;
   max-width: 1024px;
 
-  .activity-grid {
+  .bio {
     width: 100%;
     max-width: 1024px;
     flex-grow: 1;
-    
-    .grid-row {
-      .card {
-        .media {
+
+    .card {
+      display: flex;
+      flex-direction: row;
+      
+      .media {
+        padding: 24px;
+        width: 400px;
+        height: 300px;
+      }
+
+      .content {
+        width: calc(100% - 400px);
+        height: 300px;
+      }
+    }
+  }
+
+  .background {
+    width: 100%;
+    max-width: 1024px;
+    flex-grow: 1;
+    margin-top: 2rem;
+
+    .card {
+      display: flex;
+      flex-direction: row;
+      
+      .video-content {
+        padding: 0;
+      }
+    }
+  }
+
+  .activities {
+    width: 100%;
+    max-width: 1024px;
+    flex-grow: 1;
+    margin-top: 2rem;
+
+    .grid-col {
+      width: 100%;
+      max-width: 1024px;
+      flex-grow: 1;
+      
+      .grid-row {
+        .card > .media {
           height: 400px;
           width: 500px;
         }
       }
     }
   }
-
-  // .header {
-  //   width: 100%;
-  //   max-width: 1024px;
-  //   display: inherit;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-content: center;
-  //   position: relative;
-  //   height: 768px;
-
-  //   .background-image {
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     img {
-  //       max-width: 1024px;
-  //       height: auto;
-  //       width: auto;
-  //     }
-  //   }
-  // }
 }
