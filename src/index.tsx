@@ -27,7 +27,7 @@ class Index extends React.Component<IndexProps, IndexState> {
     this.state = {
       anchorElement: undefined,
       menuOpen: false,
-      page: Page.AboutMe
+      page: Page.Home
     }
   }
 
@@ -66,9 +66,6 @@ class Index extends React.Component<IndexProps, IndexState> {
             <MenuItem onClick={this.newSelectPageHandler(Page.Home)} disabled={this.state.page == Page.Home}>
               Home
             </MenuItem>
-            <MenuItem onClick={this.newSelectPageHandler(Page.Vlog)} disabled={this.state.page == Page.Vlog}>
-              Vlog
-            </MenuItem>
             <MenuItem onClick={this.newSelectPageHandler(Page.AboutMe)} disabled={this.state.page == Page.AboutMe}>
               About Me
             </MenuItem>
@@ -91,8 +88,6 @@ class Index extends React.Component<IndexProps, IndexState> {
         return <Home />
       case Page.AboutMe:
         return <AboutMe />
-      case Page.Vlog:
-        return <h1>Under construction</h1>
       default:
         return <Home />
     }
