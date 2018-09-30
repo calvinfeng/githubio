@@ -49,7 +49,7 @@ class Index extends React.Component<IndexProps, IndexState> {
 
   get header() {
     const github: string = "https://github.com/calvinfeng/"
-    const linkedin: string = "https://github.com/calvinfeng/"
+    const linkedin: string = "https://www.linkedin.com/in/calvin-feng/"
 
     return (
       <AppBar position="static" color="default" className="app-bar">
@@ -92,7 +92,7 @@ class Index extends React.Component<IndexProps, IndexState> {
       case Page.AboutMe:
         return <AboutMe />
       case Page.Vlog:
-        return <h1>Vlog</h1>
+        return <h1>Under construction</h1>
       default:
         return <Home />
     }
