@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "build:watch": "webpack --watch",
-    "server": "http-server" 
+    "server": "http-server"
   },
   "author": "Calvin Feng",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-markdown": "^3.6.0",
+    "react-mathjax": "^1.0.1",
     "react-player": "^1.6.6",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",

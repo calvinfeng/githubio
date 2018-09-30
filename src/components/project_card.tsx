@@ -32,12 +32,16 @@ class ProjectCard extends React.Component<ProjectCardProps, any> {
 
   get buttons() {
     const buttons = [
-      <Button size="small" color="primary" onClick={this.newOpenLinkHandler(this.props.github)}>Source code</Button>
+      <Button 
+        size="small" color="primary" key="source"
+        onClick={this.newOpenLinkHandler(this.props.github)}>Source code</Button>
     ]
 
     if (this.props.live.length > 0) {
       buttons.push(
-        <Button size="small" color="primary" onClick={this.newOpenLinkHandler(this.props.live)}>Visit</Button>
+        <Button 
+          size="small" color="primary" key="visit"
+          onClick={this.newOpenLinkHandler(this.props.live)}>Visit</Button>
       )
     }
 

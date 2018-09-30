@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Post from "../components/post"
+import MathJax from 'react-mathjax';
 import ReactPlayer from 'react-player'
 import { Card, CardHeader, CardMedia, Paper, Grid, CardContent, Typography } from '@material-ui/core'
 import "./about_me.scss"
@@ -29,8 +29,8 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
       background: {
         headline: "Background",
         subheading: "Solid State Physics - Superconductivity",
-        londonEqn1: "$$\\frac{\\partial j_{s}}{\\partial t} = \\frac{n_{s} e^{2}}{m} E$$",
-        londonEqn2: "$$\\nabla \\times j_{s} = -\\frac{n_{s}e^{2}}{m} B$$"
+        londonEqn1: "\\frac{\\partial j_{s}}{\\partial t} = \\frac{n_{s} e^{2}}{m} E",
+        londonEqn2: "\\nabla \\times j_{s} = -\\frac{n_{s}e^{2}}{m} B"
       }
     }
   }
@@ -66,8 +66,12 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
           <CardContent className="text-content">
             <Typography variant="headline">{this.state.background.headline}</Typography>
             <Typography variant="subheading" color="textSecondary">{this.state.background.subheading}</Typography>
-            <Typography variant="body2">{this.state.background.londonEqn1}</Typography>
-            <Typography variant="body2">{this.state.background.londonEqn2}</Typography>
+            <Typography variant="body2">
+              <MathJax.Provider>
+                <MathJax.Node formula={this.state.background.londonEqn1} />
+                <MathJax.Node formula={this.state.background.londonEqn2} />
+              </MathJax.Provider>
+            </Typography>
             <Typography variant="body1">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan tortor ante, varius blandit est
               vestibulum in. Quisque non libero massa. Integer congue sed nisl id iaculis. Mauris posuere augue eget 
