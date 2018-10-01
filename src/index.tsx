@@ -1,5 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import * as  MobileDetect from 'mobile-detect';
 import GitHub from "./components/github"
 import Home from './containers/home'
 import AboutMe from './containers/about_me'
@@ -94,6 +95,21 @@ class Index extends React.Component<IndexProps, IndexState> {
   }
 
   render() {
+    const md = new MobileDetect(window.navigator.userAgent);
+
+    if (md.mobile() !== null) {
+      return (
+        <section className="index">
+          <h1>Oops sorry...</h1>
+          <h2>Your viewing device is {md.mobile()}</h2>
+          <p>
+            I haven't gotten the time to implement a mobile version.
+            Please visit this page on a desktop/laptop browser.
+          </p>
+        </section>
+      );
+    }
+
     return (
       <section className="index">
         {this.header}
