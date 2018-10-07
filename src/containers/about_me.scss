@@ -35,10 +35,17 @@
 
     .card {
       display: flex;
-      flex-direction: row;
-
+      flex-direction: column;
+      width: 100%;
       .video-content {
+        display: flex;
+        flex-direction: row;
         padding: 0;
+        align-content: center;
+        align-items: center;
+        .eqn {
+          width: calc(100% - 600px);
+        }
       }
     }
   }
@@ -54,12 +61,22 @@
       width: 100%;
       max-width: 1024px;
       .row {
-        .card {
+        .medium-card {
           display: flex;
           flex-direction: column;
-          max-width: 500px;
           .media {
+            width: 500px;
             height: 400px;
+          }
+        }
+
+        .long-card {
+          display: flex;
+          flex-direction: column;
+          max-width: inherit;
+          .media {
+            width: 1024px;
+            height: 700px;
           }
         }
       }

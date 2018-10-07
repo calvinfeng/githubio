@@ -45,13 +45,7 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
             <Typography variant="subheading" color="textSecondary">{this.state.bio.subheading}</Typography>
             <Typography variant="body1">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan tortor ante, varius blandit est
-              vestibulum in. Quisque non libero massa. Integer congue sed nisl id iaculis. Mauris posuere augue eget 
-              arcu laoreet, sit amet dignissim nunc fringilla. Aenean scelerisque mattis lacus id iaculis. Nulla 
-              facilisi. Morbi pretium arcu euismod interdum sagittis. Vestibulum ante ipsum primis in faucibus orci 
-              luctus et ultrices posuere cubilia Curae; Fusce commodo, magna nec rutrum vulputate, odio diam tincidunt 
-              leo, sed fermentum metus velit non tortor. Ut non urna sit amet leo dictum sodales. Donec consectetur 
-              libero vitae nunc lacinia, vel pharetra urna rhoncus. Aenean blandit faucibus mi nec sodales. Aenean 
-              enim ex, commodo vitae est sed, pulvinar cursus purus.
+              vestibulum in. Quisque non libero massa.
             </Typography>
           </CardContent>
         </Card>
@@ -60,30 +54,38 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
   }
 
   get background() {
+    const textContent = (
+      <CardContent className="text-content">
+        <Typography variant="headline">{this.state.background.headline}</Typography>
+        <Typography variant="subheading" color="textSecondary">{this.state.background.subheading}</Typography>
+        <Typography variant="body1">
+          I studied physics with a specialization in computational physics. My research was centered on studying how
+          and why do materials go superconducting, i.e its electrical resistance drops to zero after reaching a very
+          cold temperature. I was interested in learning what determines the critical temperature of such phase 
+          transition.
+        </Typography>
+      </CardContent>
+    )
+
+    const videoContent = (
+      <CardContent className="video-content">
+        <ReactPlayer
+          url={"https://www.youtube.com/watch?time_continue=4&v=Xts42tFYRRg"}
+          height={"350px"} />
+        <Typography variant="body1" className="eqn">
+          <MathJax.Provider>
+            <MathJax.Node formula={this.state.background.londonEqn1} />
+            <MathJax.Node formula={this.state.background.londonEqn2} />
+          </MathJax.Provider>
+        </Typography>
+      </CardContent>
+    )
+
     return (
       <section className="background">
         <Card className="card">
-          <CardContent className="text-content">
-            <Typography variant="headline">{this.state.background.headline}</Typography>
-            <Typography variant="subheading" color="textSecondary">{this.state.background.subheading}</Typography>
-            <Typography variant="body2">
-              <MathJax.Provider>
-                <MathJax.Node formula={this.state.background.londonEqn1} />
-                <MathJax.Node formula={this.state.background.londonEqn2} />
-              </MathJax.Provider>
-            </Typography>
-            <Typography variant="body1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan tortor ante, varius blandit est
-              vestibulum in. Quisque non libero massa. Integer congue sed nisl id iaculis. Mauris posuere augue eget 
-              arcu laoreet, sit amet dignissim nunc fringilla. Aenean scelerisque mattis lacus id iaculis. Nulla 
-              facilisi. Morbi pretium arcu euismod interdum sagittis.
-            </Typography>
-          </CardContent>
-          <CardContent className="video-content">
-            <ReactPlayer
-              url={"https://www.youtube.com/watch?time_continue=4&v=Xts42tFYRRg"}
-              height={"350px"} />
-          </CardContent>
+          {textContent}
+          {videoContent}
         </Card>
       </section>
     )
@@ -96,6 +98,7 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
           <Grid container className="row" direction="row" spacing={16} justify="center" >
             {this._surfing}
             {this._driving}
+            {this._traveling}
           </Grid>
         </Grid>
       </section>
@@ -105,19 +108,9 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
   get _surfing() {
     return (
       <Grid item>
-        <Card className="card">
-          <CardHeader title="My Old Hobby" subheader="Surfing" />
+        <Card className="medium-card">
+          <CardHeader title="What do I used to do?" subheader="Surf with a GoPro but I'm not that pro" />
           <CardMedia image="/static/images/surfing.jpg" title="Surfing" className="media" />
-          <CardContent>
-            <Typography component="p">
-              Maecenas nunc nisi, laoreet a condimentum sed, hendrerit ut erat. Vivamus ut nunc vel 
-              nisi vestibulum convallis. In sed ex aliquet ex mollis scelerisque at nec leo. Donec 
-              egestas justo odio, sit amet eleifend velit facilisis quis. Quisque luctus pellentesque 
-              elit, ut posuere lectus. Vivamus viverra, urna ut sagittis maximus, neque nisi dapibus 
-              lectus, eget bibendum libero urna non diam. Nulla hendrerit nisi ut nibh pellentesque, 
-              eu vehicula magna ultricies. Maecenas id molestie sapien. Proin laoreet eget diam a sodales.
-            </Typography>
-          </CardContent>
         </Card>
       </Grid>
     )
@@ -126,17 +119,37 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
   get _driving() {
     return (
       <Grid item>
-        <Card className="card">
-          <CardHeader title="Current Hobby" subheader="Driving" />
+        <Card className="medium-card">
+          <CardHeader title="What do I do besides coding?" subheader="Drive up to the mountains" />
           <CardMedia image="/static/images/rudolph.jpg" title="Boxster GTS" className="media" />
+        </Card>
+      </Grid>
+    )
+  }
+
+  get _traveling() {
+    return (
+      <Grid item>
+        <Card className="long-card">
+          <CardHeader title="Traveling" subheader="That one time I went to the snowy mountain" />
+          <CardMedia image="/static/images/snowy.jpg" title="Snow Monkey Park" className="media" />
+        </Card>
+      </Grid>
+    )  
+  }
+
+  get _videography() {
+    return (
+      <Grid item>
+        <Card className="long-card">
+          <CardHeader title="What else?" subheader="I actually really enjoy making videos" />
+          <ReactPlayer
+              url={"https://www.youtube.com/watch?v=_GiKP-ZMXvQ"}
+              width={"1024px"}
+              height={"576px"} />
           <CardContent>
             <Typography component="p">
-              Maecenas nunc nisi, laoreet a condimentum sed, hendrerit ut erat. Vivamus ut nunc vel 
-              nisi vestibulum convallis. In sed ex aliquet ex mollis scelerisque at nec leo. Donec 
-              egestas justo odio, sit amet eleifend velit facilisis quis. Quisque luctus pellentesque 
-              elit, ut posuere lectus. Vivamus viverra, urna ut sagittis maximus, neque nisi dapibus 
-              lectus, eget bibendum libero urna non diam. Nulla hendrerit nisi ut nibh pellentesque, 
-              eu vehicula magna ultricies. Maecenas id molestie sapien. Proin laoreet eget diam a sodales.
+              Why do I enjoy driving? Because I get to make some pretty cool videos with a drone.
             </Typography>
           </CardContent>
         </Card>
