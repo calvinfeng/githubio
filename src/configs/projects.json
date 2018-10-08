@@ -28,7 +28,7 @@
         {
             "id": 4,
             "title": "Go Academy",
-            "description": "I wrote a Golang primer that will introduce people to write web services in Go",
+            "description": "This is a notebook for all Golang related topics which includes easy-to-follow tutorials.",
             "image": "/static/images/goacademy.gif",
             "github": "https://github.com/calvinfeng/go-academy/",
             "live": "https://calvinfeng.gitbook.io/go-academy/"

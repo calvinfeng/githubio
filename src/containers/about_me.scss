@@ -43,6 +43,10 @@
         padding: 0;
         align-content: center;
         align-items: center;
+        .player {
+          margin: 1rem;
+        }
+
         .eqn {
           width: calc(100% - 600px);
         }
@@ -64,6 +68,7 @@
         .medium-card {
           display: flex;
           flex-direction: column;
+          max-width: 500px;
           .media {
             width: 500px;
             height: 400px;
