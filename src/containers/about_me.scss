@@ -1,5 +1,5 @@
 .about-me {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -27,11 +27,19 @@
     }
   }
 
+  .quote {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .background {
     width: 100%;
     max-width: 1024px;
     flex-grow: 1;
-    margin-top: 2rem;
+    margin-top: 1rem;
 
     .card {
       display: flex;
@@ -58,7 +66,7 @@
     width: 100%;
     max-width: 1024px;
     flex-grow: 1;
-    margin-top: 2rem;
+    margin-top: 1rem;
 
     .column {
       flex-grow: 1;

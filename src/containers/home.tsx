@@ -78,20 +78,20 @@ class Home extends React.Component<HomeProps, HomeState> {
         <section className="logos"
           onMouseEnter={this.newSnackBarOpenHandler("Tools I use")}
           onMouseLeave={this.handleSnackBarClose}>
-          <img alt="Golang" src="/static/logos/golang.png" />
-          <img alt="Python" src="/static/logos/python.png" />
-          <img alt="React" src="/static/logos/react.png" />
-          <img alt="JavaScript" src="/static/logos/javascript.png" />
-          <img alt="Rails" src="/static/logos/rails.png" />
-          <img alt="Ruby" src="/static/logos/ruby.png" />
-          <img alt="Node" src="/static/logos/node.png" />
-          <img alt="TypeScript" src="/static/logos/typescript.png" />
-          <img alt="Apache Kafka" src="/static/logos/kafka.png" />
-          <img alt="PostgreSQL" src="/static/logos/postgresql.png" />
-          <img alt="Cassandra" src="/static/logos/cassandra.png" />
-          <img alt="Docker" src="/static/logos/docker.png" />
-          <img alt="Tensorflow" src="/static/logos/tensorflow.svg" />
-          <img alt="ROS" src="/static/logos/ros.png" />
+          <img alt="Golang" src="/public/logos/golang.png" />
+          <img alt="Python" src="/public/logos/python.png" />
+          <img alt="React" src="/public/logos/react.png" />
+          <img alt="JavaScript" src="/public/logos/javascript.png" />
+          <img alt="Rails" src="/public/logos/rails.png" />
+          <img alt="Ruby" src="/public/logos/ruby.png" />
+          <img alt="Node" src="/public/logos/node.png" />
+          <img alt="TypeScript" src="/public/logos/typescript.png" />
+          <img alt="Apache Kafka" src="/public/logos/kafka.png" />
+          <img alt="PostgreSQL" src="/public/logos/postgresql.png" />
+          <img alt="Cassandra" src="/public/logos/cassandra.png" />
+          <img alt="Docker" src="/public/logos/docker.png" />
+          <img alt="Tensorflow" src="/public/logos/tensorflow.svg" />
+          <img alt="ROS" src="/public/logos/ros.png" />
         </section>
       </Paper>
     )

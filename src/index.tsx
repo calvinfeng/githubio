@@ -4,9 +4,9 @@ import * as  MobileDetect from 'mobile-detect';
 import GitHub from "./components/github"
 import Home from './containers/home'
 import AboutMe from './containers/about_me'
-import "./index.scss"
 import { MenuRounded } from '@material-ui/icons'
 import { AppBar, Typography, Toolbar, Menu, MenuItem, IconButton } from '@material-ui/core'
+import "./index.scss"
 
 type IndexProps = {}
 type IndexState = {
@@ -76,7 +76,7 @@ class Index extends React.Component<IndexProps, IndexState> {
             <GitHub />
           </IconButton>
           <IconButton color="inherit" aria-label="Menu" onClick={this.newOpenLinkHandler(linkedin)}>
-            <img height="30px" src="/static/logos/linkedin.svg" />
+            <img height="30px" src="/public/logos/linkedin.svg" />
           </IconButton>
         </Toolbar>
       </AppBar>

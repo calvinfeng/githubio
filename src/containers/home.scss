@@ -1,5 +1,5 @@
 .home {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -20,6 +20,7 @@
       width: 100%;
       top: 0;
       left: 0;
+      overflow: hidden;
     }
 
     .foreground-text {

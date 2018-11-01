@@ -4,7 +4,7 @@
             "id": 1,
             "title": "ML Notebook",
             "description": "A collection of all my notes and projects on machine learning e.g. CNN, RNN, Reinforcement Learning etc...",
-            "image": "/static/images/mlnotebook.png",
+            "image": "/public/images/mlnotebook.png",
             "github": "https://github.com/calvinfeng/machine-learning-notebook",
             "live": "https://calvinfeng.gitbook.io/machine-learning-notebook/"
         },
@@ -12,7 +12,7 @@
             "id": 2,
             "title": "Popcorn",
             "description": "A movie recommender system that uses matrix factorization and machine learnin techniques",
-            "image": "/static/images/popcorn.png",
+            "image": "/public/images/popcorn.png",
             "github": "https://github.com/calvinfeng/popcorn",
             "live": "https://popcorn-go.herokuapp.com/"
         },
@@ -20,7 +20,7 @@
             "id": 3,
             "title": "Tensor Go",
             "description": "A light weight full stack image classification web application running pre-trained ResNet-50",
-            "image": "/static/images/tensorgo.png",
+            "image": "/public/images/tensorgo.png",
             "github": "https://github.com/calvinfeng/tensorgo",
             "live": ""
         },
@@ -29,7 +29,7 @@
             "id": 4,
             "title": "Go Academy",
             "description": "This is a notebook for all Golang related topics which includes easy-to-follow tutorials.",
-            "image": "/static/images/goacademy.gif",
+            "image": "/public/images/goacademy.gif",
             "github": "https://github.com/calvinfeng/go-academy/",
             "live": "https://calvinfeng.gitbook.io/go-academy/"
         },
@@ -37,7 +37,7 @@
             "id": 5,
             "title": "MNIST Tutorial",
             "description": "Rewrite Keras from scratch, using pure numpy as a way to teach machine learning",
-            "image": "/static/images/mnist.png",
+            "image": "/public/images/mnist.png",
             "github": "https://github.com/calvinfeng/machine-learning-notebook/blob/master/mnist_tutorial/mnist_tutorial.md",
             "live": "https://calvinfeng.gitbook.io/machine-learning-notebook/supervised-learning/tutorial/mnist_tutorial"
         },
@@ -45,7 +45,7 @@
             "id": 6,
             "title": "MegaPx",
             "description": "A full stack web application for location-based photography, similar to that of 500px.",
-            "image": "/static/images/megapx.png",
+            "image": "/public/images/megapx.png",
             "github": "https://github.com/calvinfeng/MegaPx",
             "live": "https://mega-px.herokuapp.com/"
         }
