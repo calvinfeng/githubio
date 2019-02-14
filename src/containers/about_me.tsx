@@ -35,11 +35,12 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
               WHO AM I?
             </Typography>
             <Typography variant="subheading" color="textSecondary">
-              I am a Software Engineer at Fetch Robotics
+              I am currently a Senior Software Engineer at Fetch Robotics
             </Typography>
             <Typography variant="body1">
-              I primarily work on the backend cloud services and infrastructure at Fetch. From time to time I write 
-              couple ROS nodes here and there.
+              I primarily work on the backend services at Fetch, which includes robotics orchestration, i.e. telling
+              robots what to do, and high velocity data streaming. From time to time I write couple ROS nodes here and
+              there.
             </Typography>
           </CardContent>
         </Card>
@@ -67,8 +68,8 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
         <Typography variant="body1">
           I studied physics with a specialization in computational physics. My research was focused on studying how
           and why do materials go superconducting, i.e its electrical resistance drops to zero after reaching a very
-          cold temperature. My background heavily influenced my interests in programming. As you can see I quote Dijkstra
-          pretty often because he's a physicist and one of the first generation computer scientists.
+          cold temperature. My background heavily influenced my interests in programming. As you can see I quote
+          Dijkstra pretty often because he's a physicist and one of the first generation computer scientists.
         </Typography>
       </CardContent>
     )
@@ -131,7 +132,7 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
           <CardMedia image="/public/images/surfing.jpg" title="Surfing" className="media" />
           <CardContent>
             <Typography variant="body1">
-              Surfing is an exhaustive activity, hands down the best way to lose weight.
+              I don't just sit there and code. I actually have a physical life.
             </Typography>
           </CardContent>
         </Card>
@@ -147,7 +148,7 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
           <CardMedia image="/public/images/rudolph.jpg" title="Boxster GTS" className="media" />
           <CardContent>
             <Typography variant="body1">
-              I really enjoy driving. The next item on my bucket list is to track my car. 
+              I enjoy driving. The next item on my bucket list is to take my car to a real racing track.
             </Typography>
           </CardContent>
         </Card>
