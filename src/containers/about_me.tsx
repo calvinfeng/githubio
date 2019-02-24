@@ -38,9 +38,10 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
               I am currently a Senior Software Engineer at Fetch Robotics
             </Typography>
             <Typography variant="body1">
-              I primarily work on the backend services at Fetch, which includes robotics orchestration, i.e. telling
-              robots what to do, and high velocity data streaming. From time to time I write couple ROS nodes here and
-              there.
+              I primarily work on the backend services at Fetch, such as high velocity data streaming, massively
+              concurrent message broker system, ROS nodes on robots, and web servers. I am currently working on a
+              distributed robotics orchestration system, i.e. telling robots when and what to do something. Think
+              of it as Apache Airflow for robotics fleet.
             </Typography>
           </CardContent>
         </Card>
@@ -130,11 +131,6 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
         <Card className="medium-card">
           <CardHeader title="Things I do outside of work" subheader="I am a surfer" />
           <CardMedia image="/public/images/surfing.jpg" title="Surfing" className="media" />
-          <CardContent>
-            <Typography variant="body1">
-              I don't just sit there and code. I actually have a physical life.
-            </Typography>
-          </CardContent>
         </Card>
       </Grid>
     )
@@ -146,11 +142,6 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
         <Card className="medium-card">
           <CardHeader title="Things I do outside of work" subheader="I am a car enthusiast at infancy" />
           <CardMedia image="/public/images/rudolph.jpg" title="Boxster GTS" className="media" />
-          <CardContent>
-            <Typography variant="body1">
-              I enjoy driving. The next item on my bucket list is to take my car to a real racing track.
-            </Typography>
-          </CardContent>
         </Card>
       </Grid>
     )

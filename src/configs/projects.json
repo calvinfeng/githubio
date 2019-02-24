@@ -44,7 +44,7 @@
         {
             "id": 6,
             "title": "MegaPx",
-            "description": "A full stack web application for location-based photography, similar to that of 500px.",
+            "description": "A full stack web application for location-based photography, similar to that of 500px. This is a old project though, don't expect the live link to work flawlessly.",
             "image": "/public/images/megapx.png",
             "github": "https://github.com/calvinfeng/MegaPx",
             "live": "https://mega-px.herokuapp.com/"

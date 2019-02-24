@@ -1,9 +1,7 @@
 import * as React from 'react'
 import ReactPlayer from 'react-player'
 import ProjectCard from '../components/project_card'
-import {
-  Menu, MenuItem, IconButton, Paper, Grid, Snackbar
-} from '@material-ui/core'
+import { Menu, MenuItem, IconButton, Paper, Grid, Snackbar } from '@material-ui/core'
 import './home.scss'
 
 interface HomeProps {}
@@ -12,6 +10,8 @@ interface HomeState {
     snackBarOpen: boolean
     snackBarMessage: string
 }
+
+declare var require: any
 
 class Home extends React.Component<HomeProps, HomeState> {
   constructor(props) {
@@ -45,7 +45,7 @@ class Home extends React.Component<HomeProps, HomeState> {
         </div>
         <div className="foreground-text">
           <h1>Hi, I'm Calvin</h1>
-          <h2>I learn & build things, including what you're looking at</h2>
+          <h2>This is where you can learn more about me outside of work</h2>
         </div>
       </Paper>
     )
