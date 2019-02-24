@@ -61,7 +61,7 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
     const textContent = (
       <CardContent className="text-content">
         <Typography variant="headline">
-          I came from a physics background
+          I come from a physics background
         </Typography>
         <Typography variant="subheading" color="textSecondary">
           Solid State Physics - Superconductivity
