@@ -29,7 +29,7 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
     return (
       <section className="bio">
         <Card className="card">
-          <CardMedia image="/public/images/working.jpg" title="Staring Screen" className="media" />
+          <CardMedia image="/public/images/snowy.jpg" title="Staring Screen" className="media" />
           <CardContent className="content">
             <Typography variant="headline">
               Brief Introduction

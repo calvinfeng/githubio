@@ -25,11 +25,10 @@ enum Page {
 class Index extends React.Component<IndexProps, IndexState> {
   constructor(props) {
     super(props)
-
     this.state = {
       anchorElement: undefined,
       menuOpen: false,
-      page: Page.GuitarJourney
+      page: Page.Home
     }
   }
 
