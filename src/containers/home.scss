@@ -3,12 +3,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1280px;
   
   .introduction {
     width: 100%;
-    max-width: 1024px;
-    height: 576px;
+    max-width: 1280px;
+    height: 720px;
     display: inherit;
     flex-direction: column;
     justify-content: center;
@@ -45,7 +45,7 @@
 
   .gallery {
     width: 100%;
-    max-width: 1024px;
+    max-width: 1280px;
     display: flex;
     flex-direction: column;
     
@@ -57,7 +57,7 @@
 
     .project-grid {
       width: 100%;
-      max-width: 1024px;
+      max-width: 1280px;
       flex-grow: 1;
       margin-top: 2.5rem;
       margin-bottom: 2.5rem;

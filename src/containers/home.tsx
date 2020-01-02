@@ -37,8 +37,8 @@ class Home extends React.Component<HomeProps, HomeState> {
         <div className="background-video">
         <ReactPlayer
             url={"https://www.youtube.com/watch?v=9d8wWcJLnFI"}
-            width={"1024px"}
-            height={"576px"}
+            width={"1280px"}
+            height={"720px"}
             loop={true}
             muted={true}
             playing={true} />
