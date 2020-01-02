@@ -4,6 +4,7 @@ import * as  MobileDetect from 'mobile-detect';
 import GitHub from "./components/github"
 import Home from './containers/home'
 import AboutMe from './containers/about_me'
+import GuitarJourney from './containers/guitar_journey'
 import { MenuRounded } from '@material-ui/icons'
 import { AppBar, Typography, Toolbar, Menu, MenuItem, IconButton } from '@material-ui/core'
 import "./index.scss"
@@ -18,7 +19,7 @@ type IndexState = {
 enum Page {
   Home = "HOME",
   AboutMe = "ABOUT_ME",
-  Vlog = "VLOG"
+  GuitarJourney = "GUITAR_JOURNEY"
 }
 
 class Index extends React.Component<IndexProps, IndexState> {
@@ -28,7 +29,7 @@ class Index extends React.Component<IndexProps, IndexState> {
     this.state = {
       anchorElement: undefined,
       menuOpen: false,
-      page: Page.Home
+      page: Page.GuitarJourney
     }
   }
 
@@ -70,6 +71,9 @@ class Index extends React.Component<IndexProps, IndexState> {
             <MenuItem onClick={this.newSelectPageHandler(Page.AboutMe)} disabled={this.state.page == Page.AboutMe}>
               About Me
             </MenuItem>
+            <MenuItem onClick={this.newSelectPageHandler(Page.GuitarJourney)} disabled={this.state.page == Page.GuitarJourney}>
+              Guitar Journey
+            </MenuItem>
           </Menu>
           <Typography variant="title" color="inherit" className="title">Calvin Feng</Typography>
           <IconButton color="inherit" aria-label="Menu" onClick={this.newOpenLinkHandler(github)}>
@@ -89,6 +93,8 @@ class Index extends React.Component<IndexProps, IndexState> {
         return <Home />
       case Page.AboutMe:
         return <AboutMe />
+      case Page.GuitarJourney:
+        return <GuitarJourney />
       default:
         return <Home />
     }
@@ -107,7 +113,7 @@ class Index extends React.Component<IndexProps, IndexState> {
             Please visit this page on a desktop/laptop browser.
           </p>
         </section>
-      );
+      )
     }
 
     return (

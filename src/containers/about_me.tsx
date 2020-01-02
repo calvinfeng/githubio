@@ -32,16 +32,14 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
           <CardMedia image="/public/images/working.jpg" title="Staring Screen" className="media" />
           <CardContent className="content">
             <Typography variant="headline">
-              WHO AM I?
+              Brief Introduction
             </Typography>
             <Typography variant="subheading" color="textSecondary">
               I am currently a Senior Software Engineer at Fetch Robotics
             </Typography>
             <Typography variant="body1">
-              I primarily work on the backend services at Fetch, such as high velocity data streaming, massively
-              concurrent message broker system, ROS nodes on robots, and web servers. I am currently working on a
-              distributed robotics orchestration system, i.e. telling robots when and what to do something. Think
-              of it as Apache Airflow for robotics fleet.
+              I primarily work on the backend of fetchcore at Fetch Robotics, such as real-time data
+              streaming, data collection on robots, and distributed robotic orchestration.
             </Typography>
           </CardContent>
         </Card>
@@ -61,26 +59,23 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
     const textContent = (
       <CardContent className="text-content">
         <Typography variant="headline">
-          I come from a physics background
+          My Background
         </Typography>
         <Typography variant="subheading" color="textSecondary">
           Solid State Physics - Superconductivity
         </Typography>
         <Typography variant="body1">
-          I studied physics with a specialization in computational physics. My research was focused on studying how
-          and why do materials go superconducting, i.e its electrical resistance drops to zero after reaching a very
-          cold temperature. My background heavily influenced my interests in programming. As you can see I quote
-          Dijkstra pretty often because he's a physicist and one of the first generation computer scientists.
+          I studied physics with a specialization in computational physics. My research interest was
+          solid-state physics. I was studying how and why do materials go superconducting, i.e its
+          electrical resistance drops to zero after reaching a critical temperature with Jorge Hirsch.
+          My background heavily influenced my interests in programming. It was my first experience
+          of writing a software to solve a real world problem.
         </Typography>
       </CardContent>
     )
 
-    const videoContent = (
-      <CardContent className="video-content">
-        <ReactPlayer
-          url={"https://www.youtube.com/watch?time_continue=4&v=Xts42tFYRRg"}
-          height={"350px"}
-          className="player" />
+    const mathContent = (
+      <CardContent className="math">
         <Typography variant="body1" className="eqn">
           <MathJax.Provider>
             <MathJax.Node formula={this.state.background.blochEqn} />
@@ -95,7 +90,7 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
       <section className="background">
         <Card className="card">
           {textContent}
-          {videoContent}
+          {mathContent}
         </Card>
       </section>
     )
@@ -117,30 +112,30 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
       <section className="activities">
         <Grid container className="column" direction="column">
           <Grid container className="row" direction="row" spacing={16} justify="center" >
-            {this._surfing}
-            {this._driving}
+            {this._playingGuitar}
+            {this._drivingBoxster}
           </Grid>
         </Grid>
       </section>
     )
   }
 
-  get _surfing() {
+  get _playingGuitar() {
     return (
       <Grid item>
         <Card className="medium-card">
-          <CardHeader title="Things I do outside of work" subheader="I am a surfer" />
-          <CardMedia image="/public/images/surfing.jpg" title="Surfing" className="media" />
+          <CardHeader title="Things I do outside of work" subheader="I enjoy playing an instrument." />
+          <CardMedia image="/public/images/at-guitar-center.png" title="Surfing" className="media" />
         </Card>
       </Grid>
     )
   }
 
-  get _driving() {
+  get _drivingBoxster() {
     return (
       <Grid item>
         <Card className="medium-card">
-          <CardHeader title="Things I do outside of work" subheader="I am a car enthusiast at infancy" />
+          <CardHeader title="Things I do outside of work" subheader="I enjoy driving." />
           <CardMedia image="/public/images/rudolph.jpg" title="Boxster GTS" className="media" />
         </Card>
       </Grid>
@@ -156,25 +151,6 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
         </Card>
       </Grid>
     )  
-  }
-
-  get _videography() {
-    return (
-      <Grid item>
-        <Card className="long-card">
-          <CardHeader title="I am a photographer" subheader="I actually really enjoy making videos" />
-          <ReactPlayer
-              url={"https://www.youtube.com/watch?v=_GiKP-ZMXvQ"}
-              width={"1024px"}
-              height={"576px"} />
-          <CardContent>
-            <Typography component="p">
-              Why do I enjoy driving? Because I get to make some pretty cool videos with a drone.
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-    )
   }
 
   render() {

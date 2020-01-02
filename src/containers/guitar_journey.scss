@@ -1,0 +1,17 @@
+#guitar-journey {
+  max-width: calc(100%-100px);
+  min-width: 1024;
+  .monthly-progress-grid {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .video-card {
+    margin: 0.2rem;
+    .text-container {
+      padding: 1rem;
+    }
+  }
+}

@@ -44,19 +44,15 @@
     .card {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       width: 100%;
-      .video-content {
+      .math {
         display: flex;
         flex-direction: row;
         padding: 0;
-        align-content: center;
-        align-items: center;
-        .player {
-          margin: 1rem;
-        }
-
+        justify-content: center;
         .eqn {
-          width: calc(100% - 600px);
+          width: calc(100% - 50px);
         }
       }
     }

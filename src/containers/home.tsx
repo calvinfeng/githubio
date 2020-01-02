@@ -45,7 +45,7 @@ class Home extends React.Component<HomeProps, HomeState> {
         </div>
         <div className="foreground-text">
           <h1>Hi, I'm Calvin</h1>
-          <h2>This is where you can learn more about me outside of work</h2>
+          <h2>This is my personal blog for coding and music</h2>
         </div>
       </Paper>
     )
