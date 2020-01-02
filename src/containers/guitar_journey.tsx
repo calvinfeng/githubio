@@ -2,7 +2,7 @@ import * as React from 'react'
 import "./guitar_journey.scss"
 import ReactPlayer from 'react-player';
 import Grid from '@material-ui/core/Grid'
-import { Card, Typography } from '@material-ui/core';
+import { Card, Typography, CardMedia, CardContent } from '@material-ui/core';
 
 type GuitarJourneyProps = {}
 type GuitarJourneyState = {}
@@ -42,6 +42,37 @@ const monthlyProgressVideos: VideoJSON[] = [
 ]
 
 class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneyState> {
+
+  get introduction() {
+    return (
+      <section className="introduction">
+        <Card className="card">
+          <CardMedia image="/public/images/guitar.jpg" title="Random Guitar" className="media" />
+          <CardContent className="content">
+            <Typography variant="headline">Guitar Journey</Typography>
+            <Typography variant="subheading">
+              A documentary of my learning progress from a beginner to intermediate player
+            </Typography>
+            <Typography variant="body1" className="paragraph">
+              I started playing guitar when I was 16. I took lessons for about a year and stopped.
+              I failed to continue the learning on my own. My progress came to a halt. In college,
+              I didn't get to practice a lot due to sound restriction. In the early years of my
+              software career, I was mostly focused on sharpening my professional skill. In the middle
+              of 2019, I ran into Justin Sandercoe's free online guitar course. It simply kickstarted
+              my guitar learning journey once again.
+            </Typography>
+            <Typography variant="body1" className="paragraph">
+              Ever since August, 2019 I've been practicing with a rigorious schedule. I practiced strictly
+              at least one hour a day. I wanted to understand how far can discipline get me. I decided
+              to document my guitar playing. Every month I will record a progress report video. The idea
+              of the progress report is to play a song from beginning to end and see how far can I go.
+              In between every month, I upload a set of practice recordings of licks and sections of a song. 
+            </Typography>
+          </CardContent>
+        </Card>
+      </section>
+    )
+  }
     
     get monthlyProgress() {
       const cards = monthlyProgressVideos.map((video: VideoJSON) => {
@@ -71,6 +102,7 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
 
     render() {
       return <section id="guitar-journey">
+        {this.introduction}
         {this.monthlyProgress}
       </section> 
     }
