@@ -65,7 +65,15 @@ const practiceRecordings: VideoGroupJSON[] = [
     group_title: "2019 December",
     videos: [
       {
-        url: "https://www.youtube.com/watch?v=emjmvfMPtqs",
+        url: "https://www.youtube.com/watch?v=emjmvfMPtqs"
+      }
+    ]
+  },
+  {
+    group_title: "2020 January",
+    videos: [
+      {
+        url: "https://www.youtube.com/watch?v=tLh_cBTHLOY"
       }
     ]
   }
@@ -127,7 +135,7 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
   get practiceRecordingIntroduction() {
     return (
       <Card className="pano-text-card">
-        <CardMedia image="/public/images/guitar-pano.jpg" title="Guitar Pano" className="media" />
+        <CardMedia image="/public/images/playingguitar.jpg" title="Guitar Pano" className="media" />
         <CardContent className="content">
           <Typography variant="h5">Random Uploads</Typography>
           <Typography variant="subtitle1" color="textSecondary">
