@@ -31,10 +31,10 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
         <Card className="card">
           <CardMedia image="/public/images/snowy.jpg" title="Staring Screen" className="media" />
           <CardContent className="content">
-            <Typography variant="headline">
+            <Typography variant="h1">
               Brief Introduction
             </Typography>
-            <Typography variant="subheading" color="textSecondary">
+            <Typography variant="subtitle1" color="textSecondary">
               I am currently a Senior Software Engineer at Fetch Robotics
             </Typography>
             <Typography variant="body1">
@@ -58,10 +58,10 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
   get background() {
     const textContent = (
       <CardContent className="text-content">
-        <Typography variant="headline">
+        <Typography variant="h1">
           My Background
         </Typography>
-        <Typography variant="subheading" color="textSecondary">
+        <Typography variant="subtitle1" color="textSecondary">
           Solid State Physics - Superconductivity
         </Typography>
         <Typography variant="body1">
@@ -111,7 +111,7 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
     return (
       <section className="activities">
         <Grid container className="column" direction="column">
-          <Grid container className="row" direction="row" spacing={16} justify="center" >
+          <Grid container className="row" direction="row" spacing={1} justify="center" >
             {this._playingGuitar}
             {this._drivingBoxster}
           </Grid>

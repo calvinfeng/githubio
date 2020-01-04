@@ -82,8 +82,8 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
       <Card className="text-card">
         <CardMedia image="/public/images/guitar.jpg" title="Random Guitar" className="media" />
         <CardContent className="content">
-          <Typography variant="headline">Guitar Journey</Typography>
-          <Typography variant="subheading">
+          <Typography variant="h1">Guitar Journey</Typography>
+          <Typography variant="subtitle1">
             A documentary of my learning progress from a beginner to intermediate player
           </Typography>
           <Typography variant="body1" className="paragraph">
@@ -112,9 +112,9 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
     const cards = monthlyProgressRecordings.reverse().map((video: VideoJSON) => {
       return <Card key={video.title} className="monthly-video-card ">
         <div className="text-container">
-          <Typography gutterBottom variant="headline" component="h2">{video.title}</Typography>
-          <Typography component="p">{video.date}</Typography>
-          <Typography component="p">{video.description}</Typography>
+          <Typography gutterBottom variant="h1">{video.title}</Typography>
+          <Typography variant="subtitle1">{video.date}</Typography>
+          <Typography variant="body1">{video.description}</Typography>
         </div>
         <ReactPlayer controls={true} height={"300px"} light={true} url={video.url} />
       </Card>
@@ -130,8 +130,8 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
       <Card className="pano-text-card">
         <CardMedia image="/public/images/guitar-pano.jpg" title="Guitar Pano" className="media" />
         <CardContent className="content">
-          <Typography variant="headline">Random Uploads</Typography>
-          <Typography variant="subheading">
+          <Typography variant="h1">Random Uploads</Typography>
+          <Typography variant="subtitle1">
             A collection of random uploads from month to month
           </Typography>
         </CardContent>
@@ -148,7 +148,7 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
       
       return <Paper key={videoGroup.group_title} className="practice-recording-uploads-paper">
         <div className="practice-recording-uploads-text-container">
-          <Typography gutterBottom variant="headline" component="h2">{videoGroup.group_title}</Typography>
+          <Typography gutterBottom variant="h1">{videoGroup.group_title}</Typography>
         </div>
         <Grid className="practice-recording-uploads-video-grid">
           {videoPlayers}

@@ -73,7 +73,7 @@ class Home extends React.Component<HomeProps, HomeState> {
           direction="column" 
           onMouseEnter={this.newSnackBarOpenHandler("Things I built")}
           onMouseLeave={this.handleSnackBarClose}>
-          <Grid container className="grid-row" direction="row" spacing={16} justify="center" >{cards}</Grid>
+          <Grid container className="grid-row" direction="row" spacing={1} justify="center" >{cards}</Grid>
         </Grid>
         <section className="logos"
           onMouseEnter={this.newSnackBarOpenHandler("Tools I use")}

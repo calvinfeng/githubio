@@ -1,25 +1,26 @@
 import * as React from 'react'
+import { Switch, Route, BrowserRouter, useLocation, useHistory } from "react-router-dom"
 import * as ReactDOM from 'react-dom'
 import * as  MobileDetect from 'mobile-detect';
+import { MenuRounded } from '@material-ui/icons'
+import { AppBar, Typography, Toolbar, Menu, MenuItem, IconButton } from '@material-ui/core'
+
 import GitHub from "./components/github"
 import Home from './containers/home'
 import AboutMe from './containers/about_me'
 import GuitarJourney from './containers/guitar_journey'
-import { MenuRounded } from '@material-ui/icons'
-import { AppBar, Typography, Toolbar, Menu, MenuItem, IconButton } from '@material-ui/core'
 import "./index.scss"
 
 type IndexProps = {}
 type IndexState = {
   anchorElement: HTMLElement,
   menuOpen: boolean,
-  page: string
 }
 
-enum Page {
-  Home = "HOME",
-  AboutMe = "ABOUT_ME",
-  GuitarJourney = "GUITAR_JOURNEY"
+enum Path {
+  Home = "/",
+  AboutMe = "/about",
+  GuitarJourney = "/guitarjourney"
 }
 
 class Index extends React.Component<IndexProps, IndexState> {
@@ -27,8 +28,7 @@ class Index extends React.Component<IndexProps, IndexState> {
     super(props)
     this.state = {
       anchorElement: undefined,
-      menuOpen: false,
-      page: Page.Home
+      menuOpen: false
     }
   }
 
@@ -40,17 +40,21 @@ class Index extends React.Component<IndexProps, IndexState> {
     this.setState({ anchorElement: e.currentTarget, menuOpen: true })
   }
 
-  newSelectPageHandler = (page: string) => (e: React.MouseEvent<HTMLElement>) => {
-    this.setState({ anchorElement: null, menuOpen: false, page })
+  newPathNavigateHandler = (path: string) => (e: React.MouseEvent<HTMLElement>) => {
+    const history = useHistory()
+    history.push(path)
   }
   
-  newOpenLinkHandler = (url: string) => () => {
-    window.open(url)
-  }
-
-  get header() {
-    const github: string = "https://github.com/calvinfeng/"
+  get topbar() {
     const linkedin: string = "https://www.linkedin.com/in/calvin-feng/"
+    const linkedinIcon = <IconButton color="inherit" aria-label="Menu" onClick={() => window.open(linkedin)}>
+      <img height="30px" src="/public/logos/linkedin.svg" />
+    </IconButton>
+
+    const github: string = "https://github.com/calvinfeng/"
+    const githubIcon = <IconButton color="inherit" aria-label="Menu" onClick={() => window.open(github)}>
+      <GitHub />
+    </IconButton>
 
     return (
       <AppBar position="static" color="default" className="app-bar">
@@ -64,39 +68,31 @@ class Index extends React.Component<IndexProps, IndexState> {
             getContentAnchorEl={null}
             anchorEl={this.state.anchorElement}
             anchorOrigin={{"vertical": "bottom", "horizontal": "center"}} >
-            <MenuItem onClick={this.newSelectPageHandler(Page.Home)} disabled={this.state.page == Page.Home}>
-              Home
-            </MenuItem>
-            <MenuItem onClick={this.newSelectPageHandler(Page.AboutMe)} disabled={this.state.page == Page.AboutMe}>
-              About Me
-            </MenuItem>
-            <MenuItem onClick={this.newSelectPageHandler(Page.GuitarJourney)} disabled={this.state.page == Page.GuitarJourney}>
-              Guitar Journey
-            </MenuItem>
+            <HomeMenuItem />
+            <AboutMeMenuItem />
+            <GuitarJourneyMenuItem />
           </Menu>
-          <Typography variant="title" color="inherit" className="title">Calvin Feng</Typography>
-          <IconButton color="inherit" aria-label="Menu" onClick={this.newOpenLinkHandler(github)}>
-            <GitHub />
-          </IconButton>
-          <IconButton color="inherit" aria-label="Menu" onClick={this.newOpenLinkHandler(linkedin)}>
-            <img height="30px" src="/public/logos/linkedin.svg" />
-          </IconButton>
+          <Typography color="inherit" className="title">Calvin Feng</Typography>
+          {githubIcon}
         </Toolbar>
       </AppBar>
     )
   }
 
-  get body() {
-    switch(this.state.page) {
-      case Page.Home:
-        return <Home />
-      case Page.AboutMe:
-        return <AboutMe />
-      case Page.GuitarJourney:
-        return <GuitarJourney />
-      default:
-        return <Home />
-    }
+  get content() {
+    return (
+      <Switch>
+        <Route exact path={Path.Home}>
+          <Home />
+        </Route>
+        <Route path={Path.AboutMe}>
+          <AboutMe />
+        </Route>
+        <Route path={Path.GuitarJourney}>
+          <GuitarJourney />
+        </Route>
+      </Switch>
+    )
   }
 
   render() {
@@ -116,10 +112,12 @@ class Index extends React.Component<IndexProps, IndexState> {
     }
 
     return (
-      <section className="index">
-        {this.header}
-        {this.body}
-      </section>
+      <BrowserRouter>
+        <section className="index">
+          {this.topbar}
+          {this.content}
+        </section>
+      </BrowserRouter>
     )
   }
 }
@@ -127,3 +125,54 @@ class Index extends React.Component<IndexProps, IndexState> {
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<Index />, document.getElementById("root"))
 })
+
+/**
+ * TODO: Use generator to create these function components.
+ * I tried do higher order function but React complains that it is not returning a React node.
+ * What the hell man...
+ */
+
+function HomeMenuItem() {
+  const history = useHistory();
+  const disabled = useLocation() === Path.Home;
+
+  function handleClick() {
+    history.push(Path.Home);
+  }
+
+  return (
+    <MenuItem onClick={handleClick} disabled={disabled}>
+      Home
+    </MenuItem>
+  );
+}
+
+function AboutMeMenuItem() {
+  const history = useHistory();
+  const disabled = useLocation() === Path.AboutMe;
+
+  function handleClick() {
+    history.push(Path.AboutMe);
+  }
+
+  return (
+    <MenuItem onClick={handleClick} disabled={disabled}>
+      About Me
+    </MenuItem>
+  );
+}
+
+function GuitarJourneyMenuItem() {
+  const history = useHistory();
+  const disabled = useLocation() === Path.GuitarJourney;
+
+  function handleClick() {
+    history.push(Path.GuitarJourney);
+  }
+
+  return (
+    <MenuItem onClick={handleClick} disabled={disabled}>
+      My Guitar Journey
+    </MenuItem>
+  );
+}

@@ -1,8 +1,8 @@
 {
   "name": "calvinfeng.github.io",
-  "version": "0.0.1",
-  "description": "a personal blog that is built personally",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "personal page hosted on GitHub",
+  "main": "webpack.config.js",
   "scripts": {
     "postinstall": "webpack",
     "prestart": "webpack",
@@ -10,29 +10,40 @@
     "build": "webpack",
     "build:watch": "webpack --watch"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calvinfeng/calvinfeng.github.io.git"
+  },
+  "keywords": [
+    "typescript",
+    "react"
+  ],
   "author": "Calvin Feng",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calvinfeng/calvinfeng.github.io/issues"
+  },
+  "homepage": "https://github.com/calvinfeng/calvinfeng.github.io#readme",
   "dependencies": {
-    "@material-ui/core": "^3.1.0",
-    "@material-ui/icons": "^3.0.1",
-    "@types/react": "^16.4.14",
-    "@types/react-dom": "^16.0.7",
-    "axios": "^0.18.0",
-    "css-loader": "^1.0.0",
-    "highlightjs": "^9.10.0",
-    "mobile-detect": "^1.4.3",
-    "node-sass": "^4.9.3",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-markdown": "^3.6.0",
+    "@material-ui/core": "^4.8.2",
+    "@material-ui/icons": "^4.5.1",
+    "axios": "^0.19.0",
+    "css-loader": "^3.4.1",
+    "highlightjs": "^9.16.2",
+    "mobile-detect": "^1.4.4",
+    "node-sass": "^4.13.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-markdown": "^4.3.0",
     "react-mathjax": "^1.0.1",
-    "react-player": "^1.6.6",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.0",
-    "ts-loader": "^5.1.1",
-    "typescript": "^3.0.3",
-    "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.9"
+    "react-player": "^1.14.2",
+    "react-router-dom": "^5.1.2",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.1.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   }
 }
