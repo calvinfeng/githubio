@@ -82,11 +82,11 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
       <Card className="text-card">
         <CardMedia image="/public/images/guitar.jpg" title="Random Guitar" className="media" />
         <CardContent className="content">
-          <Typography variant="h1">Guitar Journey</Typography>
-          <Typography variant="subtitle1">
+          <Typography variant="h4">Guitar Journey</Typography>
+          <Typography variant="subtitle1" color="textSecondary" paragraph={true}>
             A documentary of my learning progress from a beginner to intermediate player
           </Typography>
-          <Typography variant="body1" className="paragraph">
+          <Typography variant="body2" paragraph={true}>
             I started playing guitar when I was around 16. I took lessons for about a year. Then I
             just stopped growing as a guitar player. I failed to continue the learning on my own. In
             college, I didn't get to practice a lot due to sound restriction. In the early years of
@@ -95,7 +95,7 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
             lessons are so good and well-structured that it simply kickstarted my guitar learning
             journey once again.
           </Typography>
-          <Typography variant="body1" className="paragraph">
+          <Typography variant="body2" paragraph={true}>
             Ever since August, 2019 I've been practicing with a rigorious schedule. I practiced strictly
             at least one hour a day. I wanted to see how far can discipline get me. I decided to document
             my guitar playing. Every month I will record a progress report video. The idea of the progress
@@ -108,20 +108,19 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
   }
 
   get monthlyProgress() {
-    // Reverse all video JSON listing because I want to sort them from nearest to furthest date.
-    const cards = monthlyProgressRecordings.reverse().map((video: VideoJSON) => {
+    const cards = monthlyProgressRecordings.map((video: VideoJSON) => {
       return <Card key={video.title} className="monthly-video-card ">
         <div className="text-container">
-          <Typography gutterBottom variant="h1">{video.title}</Typography>
-          <Typography variant="subtitle1">{video.date}</Typography>
-          <Typography variant="body1">{video.description}</Typography>
+          <Typography gutterBottom variant="h5">{video.title}</Typography>
+          <Typography variant="subtitle2">{video.date}</Typography>
+          <Typography variant="body2">{video.description}</Typography>
         </div>
-        <ReactPlayer controls={true} height={"300px"} light={true} url={video.url} />
+        <ReactPlayer controls={true} height={"300px"} light={true} url={video.url}/>
       </Card>
     })
 
     return <Grid className="monthly-progress-video-grid">
-      {cards.map((card) => <Grid item key={card.key}>{card}</Grid>)}
+      {cards.reverse().map((card, idx) => <Grid item key={`card-${idx+1}`}>{card}</Grid>)}
     </Grid>
   }
 
@@ -130,8 +129,8 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
       <Card className="pano-text-card">
         <CardMedia image="/public/images/guitar-pano.jpg" title="Guitar Pano" className="media" />
         <CardContent className="content">
-          <Typography variant="h1">Random Uploads</Typography>
-          <Typography variant="subtitle1">
+          <Typography variant="h5">Random Uploads</Typography>
+          <Typography variant="subtitle1" color="textSecondary">
             A collection of random uploads from month to month
           </Typography>
         </CardContent>
@@ -140,23 +139,22 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
   }
 
   get practiceRecordingUploads() {
-    // Reverse all video JSON listing because I want to sort them from nearest to furthest date.
-    const papers = practiceRecordings.reverse().map((videoGroup: VideoGroupJSON) => {
-      const videoPlayers = videoGroup.videos.reverse().map((video: VideoJSON) => {
-        return <ReactPlayer controls={true} height={"300px"} light={true} url={video.url} />
+    const papers = practiceRecordings.map((videoGroup: VideoGroupJSON) => {
+      const videoPlayers = videoGroup.videos.map((video: VideoJSON) => {
+        return <ReactPlayer controls={true} height={"300px"} light={true} url={video.url} key={video.url}/>
       })
       
       return <Paper key={videoGroup.group_title} className="practice-recording-uploads-paper">
         <div className="practice-recording-uploads-text-container">
-          <Typography gutterBottom variant="h1">{videoGroup.group_title}</Typography>
+          <Typography gutterBottom variant="h6">{videoGroup.group_title}</Typography>
         </div>
         <Grid className="practice-recording-uploads-video-grid">
-          {videoPlayers}
+          {videoPlayers.reverse()}
         </Grid>
       </Paper>
     })
 
-    return papers
+    return papers.reverse()
   }
   
   render() {

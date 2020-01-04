@@ -31,13 +31,13 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
         <Card className="card">
           <CardMedia image="/public/images/snowy.jpg" title="Staring Screen" className="media" />
           <CardContent className="content">
-            <Typography variant="h1">
+            <Typography variant="h4">
               Brief Introduction
             </Typography>
             <Typography variant="subtitle1" color="textSecondary">
               I am currently a Senior Software Engineer at Fetch Robotics
             </Typography>
-            <Typography variant="body1">
+            <Typography variant="body2">
               I primarily work on the backend of fetchcore at Fetch Robotics, such as real-time data
               streaming, data collection on robots, and distributed robotic orchestration.
             </Typography>
@@ -58,13 +58,13 @@ class AboutMe extends React.Component<AboutMeProps, AboutMeState> {
   get background() {
     const textContent = (
       <CardContent className="text-content">
-        <Typography variant="h1">
+        <Typography variant="h4">
           My Background
         </Typography>
         <Typography variant="subtitle1" color="textSecondary">
           Solid State Physics - Superconductivity
         </Typography>
-        <Typography variant="body1">
+        <Typography variant="body2">
           I studied physics with a specialization in computational physics. My research interest was
           solid-state physics. I was studying how and why do materials go superconducting, i.e its
           electrical resistance drops to zero after reaching a critical temperature with Jorge Hirsch.

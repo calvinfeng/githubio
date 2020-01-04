@@ -72,7 +72,7 @@ class Index extends React.Component<IndexProps, IndexState> {
             <AboutMeMenuItem />
             <GuitarJourneyMenuItem />
           </Menu>
-          <Typography color="inherit" className="title">Calvin Feng</Typography>
+          <Typography color="inherit" variant="h6" className="title">Calvin Feng</Typography>
           {githubIcon}
         </Toolbar>
       </AppBar>
@@ -172,7 +172,7 @@ function GuitarJourneyMenuItem() {
 
   return (
     <MenuItem onClick={handleClick} disabled={disabled}>
-      My Guitar Journey
+      Guitar Journey
     </MenuItem>
   );
 }

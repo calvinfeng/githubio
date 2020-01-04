@@ -56,8 +56,8 @@ class ProjectCard extends React.Component<ProjectCardProps, any> {
           image={this.props.image}
           title={this.props.title}  />
         <CardContent className="project-content">
-          <Typography gutterBottom variant="h1">{this.props.title}</Typography>
-          <Typography variant="body1">{this.props.description}</Typography>
+          <Typography gutterBottom variant="h5">{this.props.title}</Typography>
+          <Typography variant="body2">{this.props.description}</Typography>
         </CardContent>
         <CardActions>{this.buttons}</CardActions>
       </Card>
