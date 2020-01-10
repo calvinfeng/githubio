@@ -74,6 +74,9 @@ const practiceRecordings: VideoGroupJSON[] = [
     videos: [
       {
         url: "https://www.youtube.com/watch?v=tLh_cBTHLOY"
+      },
+      {
+        url: "https://www.youtube.com/watch?v=qmrl3do41lo"
       }
     ]
   }
