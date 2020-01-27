@@ -31,7 +31,7 @@
             "description": "This is a notebook for all Golang related topics which includes easy-to-follow tutorials.",
             "image": "/public/images/goacademy.gif",
             "github": "https://github.com/calvinfeng/go-academy/",
-            "live": "https://calvinfeng.gitbook.io/go-academy/"
+            "live": "https://go-academy.gitbook.io/go-academy/"
         },
         {
             "id": 5,
@@ -48,6 +48,20 @@
             "image": "/public/images/megapx.png",
             "github": "https://github.com/calvinfeng/MegaPx",
             "live": "https://mega-px.herokuapp.com/"
+        },
+        {
+            "id": 7,
+            "title": "Probabilistic Robotics",
+            "description": "Course notes from reading Probabilistic Robotics",
+            "github": "https://github.com/calvinfeng/probrobotics",
+            "live": "https://calvinfeng.gitbook.io/probabilistic-robotics/"
+        },
+        {
+            "id": 8,
+            "title": "Introduction to Operating System",
+            "description": "Course notes from introduction to operating system",
+            "github": "https://github.com/calvinfeng/CS8803",
+            "live": "https://calvinfeng.gitbook.io/cs8803/"
         }
     ]
 }

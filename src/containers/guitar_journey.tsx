@@ -72,12 +72,10 @@ const practiceRecordings: VideoGroupJSON[] = [
   {
     group_title: "2020 January",
     videos: [
-      {
-        url: "https://www.youtube.com/watch?v=tLh_cBTHLOY"
-      },
-      {
-        url: "https://www.youtube.com/watch?v=qmrl3do41lo"
-      }
+      { url: "https://www.youtube.com/watch?v=tLh_cBTHLOY" },
+      { url: "https://www.youtube.com/watch?v=qmrl3do41lo" },
+      { url: "https://www.youtube.com/watch?v=4W1_zKsl7wE" },
+      { url: "https://www.youtube.com/watch?v=FKmWPsknfuc" }
     ]
   }
 ]
