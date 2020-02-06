@@ -44,8 +44,8 @@ class Home extends React.Component<HomeProps, HomeState> {
             playing={true} />
         </div>
         <div className="foreground-text">
-          <h1>Hi, I'm Calvin</h1>
-          <h2>This is my personal blog for coding and music</h2>
+          <h1>Hello there,</h1>
+          <h2>this is my personal blog for coding and music.</h2>
         </div>
       </Paper>
     )

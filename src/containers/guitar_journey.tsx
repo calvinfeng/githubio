@@ -96,20 +96,21 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
             A documentary of my learning progress from a beginner to intermediate player
           </Typography>
           <Typography variant="body2" paragraph={true}>
-            I started playing guitar when I was around 16. I took lessons for about a year. Then I
-            just stopped growing as a guitar player. I failed to continue the learning on my own. In
-            college, I didn't get to practice a lot due to sound restriction. In the early years of
-            my software career, I was mostly focused on sharpening my professional skill. Fortunately,
-            in the middle of 2019, I ran into Justin Sandercoe's free online guitar course. His
-            lessons are so good and well-structured that it simply kickstarted my guitar learning
-            journey once again.
+            I was first exposed to guitar when I was around 16. As a teenager, I was lacking the
+            discipline to stay focused and practice rigoriously. I took guitar lessons for a year.
+            I didn't really pay much attention to music theory or maintain a practice routine. Perhaps
+            this is one of those things I wish I could have done better. It was the middle of 2019,
+            I discovered Justin Sandercoe's free online guitar course. The lessons are so well
+            structured, it motivated me to pick up guitar seriously once again.
           </Typography>
           <Typography variant="body2" paragraph={true}>
-            Ever since August, 2019 I've been practicing with a rigorious schedule. I practiced strictly
-            at least one hour a day. I wanted to see how far can discipline get me. I decided to document
-            my guitar playing. Every month I will record a progress report video. The idea of the progress
-            report is to play a song from beginning to end and see how far can I go. In between every month,
-            I upload a set of practice recordings of licks and sections of a song. 
+            Ever since August, 2019 I've been practicing with a rigorious schedule. I practiced
+            strictly at least one hour a day. I wanted to see how far can discipline get me. I
+            decided to document my guitar playing. Every month I will record a progress report
+            video. The idea of the progress report is to play a song from beginning to end and track
+            how far I can go each month. In between every month, I upload a set of practice
+            recordings of licks and sections of a song to increase the data granularity. I use
+            songs as metric, because I feel this is what most people care about anyways.
           </Typography>
         </CardContent>
       </Card>

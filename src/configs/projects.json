@@ -10,6 +10,22 @@
         },
         {
             "id": 2,
+            "title": "Probabilistic Robotics",
+            "description": "Course notes from reading Probabilistic Robotics",
+            "image": "/public/images/probrobot.jpg",
+            "github": "https://github.com/calvinfeng/probrobotics",
+            "live": "https://calvinfeng.gitbook.io/probabilistic-robotics/"
+        },
+        {
+            "id": 3,
+            "title": "Introduction to Operating System",
+            "description": "Course notes from Introduction to Operating System",
+            "image": "/public/images/linux.png",
+            "github": "https://github.com/calvinfeng/CS8803",
+            "live": "https://calvinfeng.gitbook.io/cs8803/"
+        },
+        {
+            "id": 4,
             "title": "Popcorn",
             "description": "A movie recommender system that uses matrix factorization and machine learnin techniques",
             "image": "/public/images/popcorn.png",
@@ -17,7 +33,7 @@
             "live": "https://popcorn-go.herokuapp.com/"
         },
         {
-            "id": 3,
+            "id": 5,
             "title": "Tensor Go",
             "description": "A light weight full stack image classification web application running pre-trained ResNet-50",
             "image": "/public/images/tensorgo.png",
@@ -26,7 +42,7 @@
         },
 
         {
-            "id": 4,
+            "id": 6,
             "title": "Go Academy",
             "description": "This is a notebook for all Golang related topics which includes easy-to-follow tutorials.",
             "image": "/public/images/goacademy.gif",
@@ -34,7 +50,7 @@
             "live": "https://go-academy.gitbook.io/go-academy/"
         },
         {
-            "id": 5,
+            "id": 7,
             "title": "MNIST Tutorial",
             "description": "Rewrite Keras from scratch, using pure numpy as a way to teach machine learning",
             "image": "/public/images/mnist.png",
@@ -42,26 +58,12 @@
             "live": "https://calvinfeng.gitbook.io/machine-learning-notebook/supervised-learning/tutorial/mnist_tutorial"
         },
         {
-            "id": 6,
+            "id": 8,
             "title": "MegaPx",
-            "description": "A full stack web application for location-based photography, similar to that of 500px. This is a old project though, don't expect the live link to work flawlessly.",
+            "description": "When I first learned how to write an app from front to backend",
             "image": "/public/images/megapx.png",
             "github": "https://github.com/calvinfeng/MegaPx",
             "live": "https://mega-px.herokuapp.com/"
-        },
-        {
-            "id": 7,
-            "title": "Probabilistic Robotics",
-            "description": "Course notes from reading Probabilistic Robotics",
-            "github": "https://github.com/calvinfeng/probrobotics",
-            "live": "https://calvinfeng.gitbook.io/probabilistic-robotics/"
-        },
-        {
-            "id": 8,
-            "title": "Introduction to Operating System",
-            "description": "Course notes from introduction to operating system",
-            "github": "https://github.com/calvinfeng/CS8803",
-            "live": "https://calvinfeng.gitbook.io/cs8803/"
         }
     ]
 }
