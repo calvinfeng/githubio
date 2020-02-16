@@ -21,25 +21,31 @@ const monthlyProgressRecordings: VideoJSON[] = [
     url: "https://www.youtube.com/watch?v=tjxsubPb_3A",
     title: "Monthly Progress 001",
     date: "2019 September",
-    description: "This is my first attempt at Wonderful Tonight by Eric Clapton."
+    description: "This is my first attempt at Wonderful Tonight by Eric Clapton. I only have an Epiphone PR150 at the moment. I try best my best to play what I can."
   },
   {
     url: "https://www.youtube.com/watch?v=XDyRzfTAsBI",
     title: "Monthly Progress 002",
     date: "2019 October",
-    description: "This is Wonderful Tonight with electric guitar for intro and solo." 
+    description: "This is Wonderful Tonight with electric guitar for intro and solo. The audio quality is poor because I don't know the proper way recording electric guitar." 
   },
   {
     url: "https://www.youtube.com/watch?v=u2TNvnlBhy0",
     title: "Monthly Progress 003",
     date: "2019 November",
-    description: "Wonderful Tonight & 21 Guns"
+    description: "Wonderful Tonight & 21 Guns. This is a bit of mixed bag. My skill level is a bit limited on both songs. I can only play snippets of them."
   },
   {
-      url: "https://www.youtube.com/watch?v=H_qs9Mpl2ek",
-      title: "Monthly Progress 004",
-      date: "2019 December",
-      description: "My first attempt with Now and Forever at 60 BPM"
+    url: "https://www.youtube.com/watch?v=H_qs9Mpl2ek",
+    title: "Monthly Progress 004",
+    date: "2019 December",
+    description: "My first attempt with Now and Forever at 60 BPM. I am having trouble with the Am7 to C Major 7th chord transition."
+  },
+  {
+    url: "https://www.youtube.com/watch?v=WdLsPuKwA1E",
+    title: "Monthly Progress 005",
+    date: "2020 January",
+    description: "This is an almost complete attempt of 21 Guns. I started experimenting with new recording approach."
   }
 ]
 
@@ -76,6 +82,13 @@ const practiceRecordings: VideoGroupJSON[] = [
       { url: "https://www.youtube.com/watch?v=qmrl3do41lo" },
       { url: "https://www.youtube.com/watch?v=4W1_zKsl7wE" },
       { url: "https://www.youtube.com/watch?v=FKmWPsknfuc" }
+    ]
+  },
+  {
+    group_title: "2020 February",
+    videos: [
+      { url: "https://www.youtube.com/watch?v=Nkoxd0XPgyk" },
+      { url: "https://www.youtube.com/watch?v=a0tmaY6MabQ" }
     ]
   }
 ]
