@@ -57,7 +57,19 @@
     .practice-recording-uploads-video-grid {
       display: flex;
       flex-direction: row;
+      width: 100%;
       overflow-x: scroll;
+      overflow-y: hidden;
+      .portrait-mode {
+        display: inherit;
+        height: 300px;
+        width: 190px;
+      }
+      .landscape-mode {
+        display: inherit;
+        height: 300px;
+        width: 534px;
+      }
     }
   }
 }

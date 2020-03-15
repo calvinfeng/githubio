@@ -4,10 +4,16 @@ import ReactPlayer from 'react-player';
 import Grid from '@material-ui/core/Grid'
 import { Card, Typography, CardMedia, CardContent, Paper } from '@material-ui/core';
 
+enum VideoOrientation {
+  Landscape = 'landscape',
+  Portrait = 'portrait'
+}
+
 type VideoJSON = {
   date?: string
   description?: string
   title?: string
+  orientation?: string
   url: string
 }
 
@@ -16,88 +22,7 @@ type VideoGroupJSON = {
   videos: VideoJSON[]
 }
 
-const monthlyProgressRecordings: VideoJSON[] = [
-  {
-    url: "https://www.youtube.com/watch?v=tjxsubPb_3A",
-    title: "Monthly Progress 001",
-    date: "2019 September",
-    description: "This is my first attempt at Wonderful Tonight by Eric Clapton. I only have an Epiphone PR150 at the moment. I try best my best to play what I can."
-  },
-  {
-    url: "https://www.youtube.com/watch?v=XDyRzfTAsBI",
-    title: "Monthly Progress 002",
-    date: "2019 October",
-    description: "This is Wonderful Tonight with electric guitar for intro and solo. The audio quality is poor because I don't know the proper way recording electric guitar." 
-  },
-  {
-    url: "https://www.youtube.com/watch?v=u2TNvnlBhy0",
-    title: "Monthly Progress 003",
-    date: "2019 November",
-    description: "Wonderful Tonight & 21 Guns. This is a bit of mixed bag. My skill level is a bit limited on both songs. I can only play snippets of them."
-  },
-  {
-    url: "https://www.youtube.com/watch?v=H_qs9Mpl2ek",
-    title: "Monthly Progress 004",
-    date: "2019 December",
-    description: "My first attempt with Now and Forever at 60 BPM. I am having trouble with the Am7 to C Major 7th chord transition."
-  },
-  {
-    url: "https://www.youtube.com/watch?v=WdLsPuKwA1E",
-    title: "Monthly Progress 005",
-    date: "2020 January",
-    description: "This is an almost complete attempt of 21 Guns. I started experimenting with new recording approach."
-  }
-]
-
-const practiceRecordings: VideoGroupJSON[] = [
-  {
-    group_title: "2019 October",
-    videos: [
-      { url: "https://www.youtube.com/watch?v=U4-0h6go0RA" },
-      { url: "https://www.youtube.com/watch?v=fu_npFZMHkc" },
-      { url: "https://www.youtube.com/watch?v=OeN2GGssoJ4" },
-      { url: "https://www.youtube.com/watch?v=_mQIFluFuv8" }
-    ]
-  },
-  {
-    group_title: "2019 November",
-    videos: [
-      { url: "https://www.youtube.com/watch?v=AGhYB0QryhU" },
-      { url: "https://www.youtube.com/watch?v=rcOqJuiFrQM" },
-      { url: "https://www.youtube.com/watch?v=J3sxA_JeyBo" }
-    ]
-  },
-  {
-    group_title: "2019 December",
-    videos: [
-      {
-        url: "https://www.youtube.com/watch?v=emjmvfMPtqs"
-      }
-    ]
-  },
-  {
-    group_title: "2020 January",
-    videos: [
-      { url: "https://www.youtube.com/watch?v=tLh_cBTHLOY" },
-      { url: "https://www.youtube.com/watch?v=qmrl3do41lo" },
-      { url: "https://www.youtube.com/watch?v=4W1_zKsl7wE" },
-      { url: "https://www.youtube.com/watch?v=FKmWPsknfuc" }
-    ]
-  },
-  {
-    group_title: "2020 February",
-    videos: [
-      { url: "https://www.youtube.com/watch?v=Nkoxd0XPgyk" },
-      { url: "https://www.youtube.com/watch?v=a0tmaY6MabQ" }
-    ]
-  }
-]
-
-type GuitarJourneyProps = {}
-
-type GuitarJourneyState = {}
-
-class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneyState> {
+class GuitarJourney extends React.Component<{}, {}> {
 
   get introduction() {
     return (
@@ -131,7 +56,9 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
   }
 
   get monthlyProgress() {
-    const cards = monthlyProgressRecordings.map((video: VideoJSON) => {
+    const config = require('../configs/recordings.json')
+
+    const cards = config['monthly_progress_recordings'].map((video: VideoJSON) => {
       return <Card key={video.title} className="monthly-video-card ">
         <div className="text-container">
           <Typography gutterBottom variant="h5">{video.title}</Typography>
@@ -162,9 +89,18 @@ class GuitarJourney extends React.Component<GuitarJourneyProps, GuitarJourneySta
   }
 
   get practiceRecordingUploads() {
-    const papers = practiceRecordings.map((videoGroup: VideoGroupJSON) => {
+    const config = require('../configs/recordings.json')
+    const papers = config['practice_recordings'].map((videoGroup: VideoGroupJSON) => {
       const videoPlayers = videoGroup.videos.map((video: VideoJSON) => {
-        return <ReactPlayer controls={true} height={"300px"} light={true} url={video.url} key={video.url}/>
+        let className;
+        if (video.orientation === VideoOrientation.Portrait) {
+          className = 'portrait-mode'
+        } else {
+          className = 'landscape-mode'
+        }
+        return <div className={className}>
+          <ReactPlayer height="300px" controls={true} light={true} url={video.url} key={video.url}/>
+        </div>
       })
       
       return <Paper key={videoGroup.group_title} className="practice-recording-uploads-paper">
