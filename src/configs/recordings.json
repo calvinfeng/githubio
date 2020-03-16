@@ -60,9 +60,25 @@
           "url": "https://www.youtube.com/watch?v=AGhYB0QryhU",
           "orientation": "portrait" 
         },
+        {
+          "url": "https://www.youtube.com/watch?v=SWWCfI0Qavc",
+          "orientation": "landscape"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=-_nJNU8sXOc",
+          "orientation": "landscape"
+        },
         { 
           "url": "https://www.youtube.com/watch?v=rcOqJuiFrQM",
           "orientation": "portrait" 
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=w9VWkEnjH8o",
+          "orientation": "portrait"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=0-2C1Z9Qwqg",
+          "orientation": "portrait"
         },
         { 
           "url": "https://www.youtube.com/watch?v=J3sxA_JeyBo",
@@ -94,6 +110,10 @@
           "url": "https://www.youtube.com/watch?v=4W1_zKsl7wE",
           "orientation": "landscape" 
         },
+        {
+          "url": "https://www.youtube.com/watch?v=XZ2zg1Nww5U",
+          "orientation": "landscape"
+        },
         { 
           "url": "https://www.youtube.com/watch?v=FKmWPsknfuc",
           "orientation": "landscape" 
@@ -103,6 +123,10 @@
     {
       "group_title": "2020 February",
       "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=tfJ4ou280js",
+          "orientation": "landscape"
+        },
         { 
           "url": "https://www.youtube.com/watch?v=Nkoxd0XPgyk",
           "orientation": "landscape" 
@@ -110,6 +134,10 @@
         { 
           "url": "https://www.youtube.com/watch?v=a0tmaY6MabQ",
           "orientation": "landscape" 
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Jn9K7wxdAeA",
+          "orientation": "landscape"
         },
         {
           "url": "https://www.youtube.com/watch?v=uJYoKvneN88",
